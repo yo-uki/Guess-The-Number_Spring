@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: headFragment}">
+    <meta charset="UTF-8">
+    <title>Gra w liczbę</title>
+</head>
+<body>
+    <div align="center">
+        <h1 id="game.tittle">Guess the number game</h1>
+        <h3 th:text="${mainMsg}">
+            Main Message Content
+        </h3>
+        <h3 th:text="${resultMsg}">
+            Result Message Content
+        </h3>
+
+        <form th:action ="playGame"
+              method="post">
+
+            <label for="guess">Wpisz liczbę</label>
+            <input id ="guess" type="number" name="guess"/>
+            <input type="submit" value="Submit" />
+        </form>
+
+        <footer th:replace="~{fragments/footer :: footFragment}">
+            <p>z gierki</p>
+        </footer>
+    </div>
+</body>
+</html>
